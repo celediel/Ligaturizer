@@ -241,7 +241,12 @@ def update_font_metadata(font, new_name):
     print("Ligaturizing font %s (%s) as '%s'" % (
         path.basename(font.path), old_name, new_name))
 
-    font.copyright += COPYRIGHT
+    # Some fonts don't have copyright info already
+    if not font.copyright:
+        font.copyright = COPYRIGHT
+    else:
+        font.copyright += COPYRIGHT
+
     replace_sfnt(font, 'UniqueID', '%s; Ligaturized' % font.fullname)
     replace_sfnt(font, 'Preferred Family', new_name)
     replace_sfnt(font, 'Compatible Full', new_name)
