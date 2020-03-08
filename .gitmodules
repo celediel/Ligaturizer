@@ -10,3 +10,10 @@
 	path = fonts/plex
 	url = https://github.com/IBM/plex.git
 	shallow = true
+[submodule "fonts/.\\mononoki\\"]
+	path = fonts/.\\mononoki\\
+	url = https://github.com/madmalik/mononoki.git
+	branch = master
+[submodule "fonts/mononoki"]
+	path = fonts/mononoki
+	url = https://github.com/madmalik/mononoki.git
